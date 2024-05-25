@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    /* bg-gradient-to-b from-blue-900 to-purple-900 */
+    background: #240046;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
