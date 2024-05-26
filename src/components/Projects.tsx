@@ -7,12 +7,12 @@ import React from "react";
  */
 const Projects = () => {
   return (
-    <div id="projects" className="w-full  py-16 px-4 bg-[#240046]">
-      <h1 className="md:text-4xl sm:text-3xl text-2xl text-white font-bold my-4 text-center">
+    <div id="projects" className="w-full  py-16 px-4">
+      <h1 className="md:text-4xl sm:text-3xl text-2xl text-black font-bold my-4 text-center">
         Projects
       </h1>
       <div className="max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8 mt-8">
-        <div className="w-full shadow-xl bg-[#3c096c] flex flex-col p-6 my-4 rounded-lg hover:scale-105 duration-300">
+        <div className="w-full shadow-xl bg-[#8B55B0] flex flex-col p-6 my-4 rounded-lg hover:scale-105 duration-300">
           <img
             className="w-20 h-20 mx-auto mt-[-3rem] bg-white rounded-full shadow-md"
             src={"images/hexagon.jpg"}
@@ -31,11 +31,11 @@ const Projects = () => {
               field throughout the building design and construction process.
             </p>
           </div>
-          <button className="bg-purple-600 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-[#240046] hover:bg-purple-400 transition duration-300">
+          <button className="bg-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-[#240046] hover:bg-purple-400 transition duration-300">
             Visit
           </button>
         </div>
-        <div className="w-full shadow-xl bg-[#3c096c] flex flex-col p-6 md:my-0 my-8 rounded-lg hover:scale-105 duration-300">
+        <div className="w-full shadow-xl bg-[#8B55B0] flex flex-col p-6 md:my-0 my-8 rounded-lg hover:scale-105 duration-300">
           <img
             className="w-20 h-20 mx-auto mt-[-3rem] bg-white rounded-full shadow-md"
             src={"images/fsensina.png"}
@@ -57,11 +57,11 @@ const Projects = () => {
               integrates education into daily life.
             </p>
           </div>
-          <button className="bg-purple-600 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-[#240046] hover:bg-purple-400 transition duration-300">
+          <button className="bg-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-[#240046] hover:bg-purple-400 transition duration-300">
             Visit
           </button>
         </div>
-        <div className="w-full shadow-xl bg-[#3c096c] flex flex-col p-6 my-4 rounded-lg hover:scale-105 duration-300">
+        <div className="w-full shadow-xl bg-[#8B55B0] flex flex-col p-6 my-4 rounded-lg hover:scale-105 duration-300">
           <img
             className="w-20 h-20 mx-auto mt-[-3rem] bg-white rounded-full shadow-md"
             src={"images/triple.png"}
@@ -82,7 +82,7 @@ const Projects = () => {
               Lorem Ipsum is simply dumm.
             </p>
           </div>
-          <button className="bg-purple-600 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-[#240046] hover:bg-purple-400 transition duration-300">
+          <button className="bg-white w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3 text-[#240046] hover:bg-purple-400 transition duration-300">
             Start Trial
           </button>
         </div>

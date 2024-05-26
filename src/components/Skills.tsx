@@ -113,7 +113,7 @@ const cards = [
 const Skills = () => {
   return (
     <div id="skills" className="w-full py-16 px-4">
-      <h1 className="md:text-4xl sm:text-3xl text-2xl text-white font-bold py-4 text-center">
+      <h1 className="md:text-4xl sm:text-3xl text-2xl text-black font-bold py-4 text-center">
         Skills
       </h1>
       <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -134,7 +134,7 @@ const Skills = () => {
  */
 const Card = ({ title, technologies }: any) => {
   return (
-    <div className=" rounded-lg shadow-lg overflow-hidden text-center p-6 transform transition duration-300 hover:scale-105 hover:bg-purple-900 border-2 border-purple-600">
+    <div className=" rounded-lg shadow-lg overflow-hidden text-center p-6 transform transition duration-300 hover:scale-105 hover:bg-[#8B55B0] border-2 border-[]">
       <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
       <div className="flex flex-wrap justify-center">
         {technologies.map((tech: any) => (

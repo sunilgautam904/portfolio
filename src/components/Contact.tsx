@@ -74,7 +74,7 @@ const Footer = () => {
   };
 
   return (
-    <div id="contact" className="bg-[#240046] text-white py-16">
+    <div id="contact" className="text-black py-16">
       <div className="max-w-[1240px] mx-auto grid lg:grid-cols-4 gap-8 px-4">
         <div>
           <h2 className="text-2xl font-bold mb-4">About Me</h2>

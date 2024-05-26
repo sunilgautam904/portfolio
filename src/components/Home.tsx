@@ -34,19 +34,22 @@ const Home = () => {
       <div className="mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
           <div className="md:w-[25%] flex-shrink-0">
-            <div className="w-64 h-64 md:w-80 md:h-80 mx-auto md:mx-0 md:ml-8">  {/* Added margin-left here */}
+            <div className="w-64 h-64 md:w-80 md:h-80 mx-auto md:mx-0 md:ml-8">
               <img
-                className="w-full h-full border-2 border-purple-600 rounded-full shadow-lg hover:shadow-xl transform transition duration-300 object-cover"
+                className="w-full h-full border-2 border-[] rounded-full shadow-lg hover:shadow-xl transform transition duration-300 object-cover"
                 src="/images/userProfile.png"
                 alt="Sunil Image"
               />
             </div>
           </div>
           <div className="md:w-[50%] text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Hello, I'm Sunil
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-4 text-black leading-10">
+              Hello
             </h1>
-            <p className="text-lg md:text-xl text-gray-400 mb-6">
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-4 text-[#8B55B0] leading-10">
+              I'm Sunil
+            </h1>
+            <p className="text-lg md:text-xl text-black mb-6">
               I build interactive websites that run across platforms & devices.
               I'm dedicated to staying ahead of the curve and delivering
               cutting-edge solutions that captivate users and drive results.
@@ -55,18 +58,18 @@ const Home = () => {
               to life.
             </p>
             <button
-              className="bg-purple-600 hover:bg-purple-700 text-white w-[200px] rounded-md py-3 transition-all duration-300 ease-in-out transform hover:scale-105"
+              className="bg-[#8B55B0] hover:bg-purple-700 text-white w-[200px] rounded-md py-3 transition-all duration-300 ease-in-out transform hover:scale-105"
               onClick={downloadResume}
             >
               Download Resume
             </button>
             <div className="flex items-center p-5 rounded-full">
-              <FaMouse className="text-white" />
-              <span className="text-white ml-2 mr-4">Scroll Down</span>
-              <FaArrowDown className="text-white animate-bounce" />
+              <FaMouse className="text-black" />
+              <span className="text-black ml-2 mr-4">Scroll Down</span>
+              <FaArrowDown className="text-[#8B55B0] animate-bounce" />
             </div>
           </div>
-          <div className="flex md:flex-col justify-center w-full md:w-auto md:space-y-4 mt-4 md:mb-0">
+          <div className="flex md:flex-col justify-center w-full md:w-auto md:space-y-4 mt-4 -mt-6 md:mb-0 text-black">
             <FaFacebookSquare
               className="icon hover:scale-110 hover:text-blue-500"
               size={30}
