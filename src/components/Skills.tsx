@@ -1,8 +1,9 @@
-import React from "react";
 import {
   FaCss3Alt,
   FaDatabase,
   FaDigitalTachograph,
+  FaDocker,
+  FaGithub,
   FaHtml5,
   FaJsSquare,
   FaNodeJs,
@@ -11,8 +12,10 @@ import {
 } from "react-icons/fa";
 
 import {
+  SiBabel,
   SiBitbucket,
   SiBootstrap,
+  SiConfluence,
   SiGitlab,
   SiGooglemaps,
   SiJest,
@@ -20,22 +23,26 @@ import {
   SiJquery,
   SiMongodb,
   SiNextdotjs,
+  SiNpm,
   SiPostman,
   SiSass,
   SiTailwindcss,
   SiTestinglibrary,
   SiTypescript,
   SiVisualstudiocode,
+  SiWebpack,
+  SiYarn,
 } from "react-icons/si";
 
 const techIcons = {
-  HTML: <FaHtml5 className="text-red-600 mr-2  text-lg" />,
-  CSS: <FaCss3Alt className="text-blue-600 mr-2  text-lg" />,
-  Javascript: <FaJsSquare className="text-yellow-500 mr-2  text-lg" />,
-  Typescript: <SiTypescript className="text-blue-500 mr-2  text-lg" />,
+  HTML: <FaHtml5 className="text-red-600 mr-2 text-lg" />,
+  CSS: <FaCss3Alt className="text-blue-600 mr-2 text-lg" />,
+  Javascript: <FaJsSquare className="text-yellow-500 mr-2 text-lg" />,
+  Typescript: <SiTypescript className="text-blue-500 mr-2 text-lg" />,
   "React Js": <FaReact className="text-cyan-500 mr-2 text-lg" />,
   "Next Js": <SiNextdotjs className="text-black mr-2 text-lg" />,
   "Tailwind CSS": <SiTailwindcss className="text-teal-400 mr-2 text-lg" />,
+  "Material UI": <FaTools className="text-gray-600 mr-2 text-lg" />,
   Bootstrap: <SiBootstrap className="text-purple-600 mr-2 text-lg" />,
   JQuery: <SiJquery className="text-blue-400 mr-2 text-lg" />,
   "SCSS/SASS": <SiSass className="text-pink-400 mr-2 text-lg" />,
@@ -58,6 +65,13 @@ const techIcons = {
   Postman: <SiPostman className="text-orange-500 mr-2 text-lg" />,
   "Git lab": <SiGitlab className="text-orange-600 mr-2 text-lg" />,
   Socket: <FaTools className="text-gray-600 mr-2 text-lg" />,
+  GitHub: <FaGithub className="text-gray-800 mr-2 text-lg" />,
+  Docker: <FaDocker className="text-blue-500 mr-2 text-lg" />,
+  Webpack: <SiWebpack className="text-blue-400 mr-2 text-lg" />,
+  Babel: <SiBabel className="text-yellow-500 mr-2 text-lg" />,
+  NPM: <SiNpm className="text-red-600 mr-2 text-lg" />,
+  Yarn: <SiYarn className="text-blue-600 mr-2 text-lg" />,
+  Confluence: <SiConfluence className="text-blue-600 mr-2 text-lg" />,
 };
 
 const cards = [
@@ -102,6 +116,13 @@ const cards = [
       "Bitbucket",
       "Postman",
       "Git lab",
+      "GitHub",
+      "Docker",
+      "Webpack",
+      "Babel",
+      "NPM",
+      "Yarn",
+      "Confluence",
     ],
   },
 ];
@@ -110,9 +131,9 @@ const cards = [
  * This component displays a section showcasing different skills along with their respective icons.
  * @returns {JSX.Element} The JSX element representing the Skills section.
  */
-const Skills = () => {
+const Skills = (): JSX.Element => {
   return (
-    <div id="skills" className="w-full py-16 px-4">
+    <div id="skills" className="w-full pt-16 px-4">
       <h1 className="md:text-4xl sm:text-3xl text-2xl text-black font-bold py-4 text-center">
         Skills
       </h1>
@@ -134,12 +155,12 @@ const Skills = () => {
  */
 const Card = ({ title, technologies }: any) => {
   return (
-    <div className=" rounded-lg shadow-lg overflow-hidden text-center p-6 transform transition duration-300 hover:scale-105 hover:bg-[#8B55B0] border-2 border-[]">
-      <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
+    <div className="rounded-lg shadow-lg overflow-hidden text-center p-4 md:p-6 transform transition duration-300 hover:scale-105 bg-gradient-to-r from-[#f7f7f7] to-[#cdc5c5cc] border []">
+      <h2 className="text-lg md:text-2xl font-bold text-gray-800 mb-2 md:mb-4">{title}</h2>
       <div className="flex flex-wrap justify-center">
         {technologies.map((tech: any) => (
-          <div key={tech} className="flex items-center space-x-2 mr-2 mb-2">
-            <span className="inline-flex items-center bg-gray-200 rounded-full p-2 text-sm font-semibold text-gray-800 hover:bg-gray-300 transition duration-200">
+          <div key={tech} className="flex items-center space-x-1 md:space-x-2 mr-1 md:mr-2 mb-1 md:mb-2">
+            <span className="inline-flex items-center bg-[#e0e0e0] rounded-full p-1 md:p-2 text-xs md:text-sm font-semibold text-gray-800 hover:bg-gray-400 hover:text-white transition duration-200">
               {techIcons[tech]}
               {`${tech}`}
             </span>
@@ -149,5 +170,6 @@ const Card = ({ title, technologies }: any) => {
     </div>
   );
 };
+
 
 export default Skills;
