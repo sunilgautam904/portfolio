@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+
 import {
-  FaDribbbleSquare,
-  FaFacebookSquare,
   FaGithubSquare,
   FaInstagram,
+  FaLinkedin,
   FaTwitterSquare,
 } from "react-icons/fa";
 
@@ -50,10 +50,10 @@ const Footer = () => {
 
     emailjs
       .send(
-        "service_4zo051t",
-        "template_21v8r2g",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
         templateParams,
-        "TOqFkuCP0TCwwyy13"
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
       )
       .then(
         (response) => {
@@ -84,11 +84,40 @@ const Footer = () => {
             something amazing together!
           </p>
           <div className="flex justify-start space-x-4 my-6">
-            <FaFacebookSquare className="hover:text-blue-500" size={30} />
-            <FaInstagram className="hover:text-pink-500" size={30} />
-            <FaTwitterSquare className="hover:text-blue-400" size={30} />
-            <FaGithubSquare className="hover:text-gray-400" size={30} />
-            <FaDribbbleSquare className="hover:text-red-500" size={30} />
+            <FaLinkedin
+              className="hover:text-blue-500"
+              size={30}
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/sunil-gautam-308937170/",
+                  "_blank"
+                )
+              }
+            />
+            <FaInstagram
+              className="hover:text-pink-500"
+              size={30}
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/sunilgautam08/",
+                  "_blank"
+                )
+              }
+            />
+            <FaTwitterSquare
+              className="hover:text-blue-400"
+              size={30}
+              onClick={() =>
+                window.open("https://x.com/sunilgautam08/", "_blank")
+              }
+            />
+            <FaGithubSquare
+              className="hover:text-gray-400"
+              size={30}
+              onClick={() =>
+                window.open("https://github.com/sunilgautam904", "_blank")
+              }
+            />
           </div>
         </div>
         <div>

@@ -102,13 +102,13 @@ const Navbar = () => {
         ref={sidebarRef}
         className={
           isMenuOpen
-            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#240046] ease-in-out duration-500 z-50 md:hidden"
-            : "fixed left-[-100%] top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#240046] ease-in-out duration-500 z-50 md:hidden"
+            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#cdc5c5] ease-in-out duration-500 z-50 md:hidden"
+            : "fixed left-[-100%] top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#cdc5c5] ease-in-out duration-500 z-50 md:hidden"
         }
       >
         <li className="p-4 border-b border-gray-600">
           <button
-            className="text-lg text-white hover:text-purple-600"
+            className="text-lg text-black hover:text-[#8B55B0]"
             onClick={() => handleScroll("home")}
           >
             Home
@@ -116,7 +116,7 @@ const Navbar = () => {
         </li>
         <li className="p-4 border-b border-gray-600">
           <button
-            className="text-lg text-white hover:text-purple-600"
+            className="text-lg text-black hover:text-[#8B55B0]"
             onClick={() => handleScroll("skills")}
           >
             Skills
@@ -124,7 +124,7 @@ const Navbar = () => {
         </li>
         <li className="p-4 border-b border-gray-600">
           <button
-            className="text-lg text-white hover:text-purple-600"
+            className="text-lg text-black hover:text-[#8B55B0]"
             onClick={() => handleScroll("cards")}
           >
             Projects
@@ -132,7 +132,7 @@ const Navbar = () => {
         </li>
         <li className="p-4 border-b border-gray-600">
           <button
-            className="text-lg text-white hover:text-purple-600"
+            className="text-lg text-black hover:text-[#8B55B0]"
             onClick={() => handleScroll("about")}
           >
             About

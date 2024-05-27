@@ -134,7 +134,7 @@ const cards = [
 const Skills = (): JSX.Element => {
   return (
     <div id="skills" className="w-full pt-16 px-4">
-      <h1 className="md:text-4xl sm:text-3xl text-2xl text-black font-bold py-4 text-center">
+      <h1 className="md:text-4xl sm:text-3xl text-2xl text-black font-extrabold py-4 text-center leading-10">
         Skills
       </h1>
       <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

@@ -2,7 +2,7 @@
 import React from "react";
 import {
   FaArrowDown,
-  FaFacebookSquare,
+  FaLinkedin,
   FaGithubSquare,
   FaInstagram,
   FaMouse,
@@ -70,21 +70,39 @@ const Home = () => {
             </div>
           </div>
           <div className="flex md:flex-col justify-center w-full md:w-auto md:space-y-4 mt-4 -mt-6 md:mb-0 text-black">
-            <FaFacebookSquare
+            <FaLinkedin
               className="icon hover:scale-110 hover:text-blue-500"
               size={30}
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/sunil-gautam-308937170/",
+                  "_blank"
+                )
+              }
             />
             <FaInstagram
               className="icon hover:scale-110 hover:text-pink-500"
               size={30}
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/sunilgautam08/",
+                  "_blank"
+                )
+              }
             />
             <FaTwitterSquare
               className="icon hover:scale-110 hover:text-blue-400"
               size={30}
+              onClick={() =>
+                window.open("https://x.com/sunilgautam08/", "_blank")
+              }
             />
             <FaGithubSquare
               className="icon hover:scale-110 hover:text-gray-400"
               size={30}
+              onClick={() =>
+                window.open("https://github.com/sunilgautam904", "_blank")
+              }
             />
           </div>
         </div>
