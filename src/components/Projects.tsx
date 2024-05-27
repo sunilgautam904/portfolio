@@ -5,7 +5,7 @@ import React from "react";
  * This component displays a section containing project details and links.
  * @returns {JSX.Element} The JSX element representing the Projects section.
  */
-const Projects = () => {
+const Projects = (): JSX.Element => {
   return (
     <div id="projects" className="w-full pt-4 px-4">
       <h1 className="md:text-4xl sm:text-3xl text-2xl text-black font-bold my-4 text-center py-6 font-extrabold">
@@ -57,8 +57,10 @@ const Projects = () => {
               integrates education into daily life.
             </p>
           </div>
-          <button className="bg-[#8B55B0] hover:bg-purple-700 text-white w-[200px] my-4 mx-auto px-4 py-2 rounded-md transition-all duration-300 ease-in-out transform hover:scale-105"
-          onClick={() => window.open('https://fsensina.com.br/#/', '_blank')}>
+          <button
+            className="bg-[#8B55B0] hover:bg-purple-700 text-white w-[200px] my-4 mx-auto px-4 py-2 rounded-md transition-all duration-300 ease-in-out transform hover:scale-105"
+            onClick={() => window.open("https://fsensina.com.br/#/", "_blank")}
+          >
             Visit
           </button>
         </div>

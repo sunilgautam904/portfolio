@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   FaCss3Alt,
   FaDatabase,
@@ -21,11 +23,18 @@ import {
   SiJest,
   SiJira,
   SiJquery,
+  SiJsonwebtokens,
+  SiMaterialdesign,
   SiMongodb,
+  SiMysql,
+  SiNeo4J,
   SiNextdotjs,
   SiNpm,
   SiPostman,
+  SiRedux,
+  SiReduxsaga,
   SiSass,
+  SiSocketdotio,
   SiTailwindcss,
   SiTestinglibrary,
   SiTypescript,
@@ -34,23 +43,33 @@ import {
   SiYarn,
 } from "react-icons/si";
 
-const techIcons = {
+// Define types for cards
+type CardTechnology = keyof Record<string, JSX.Element>;
+type Card = {
+  title: string;
+  technologies: CardTechnology[];
+};
+
+const techIcons: Record<string, JSX.Element> = {
   HTML: <FaHtml5 className="text-red-600 mr-2 text-lg" />,
   CSS: <FaCss3Alt className="text-blue-600 mr-2 text-lg" />,
   Javascript: <FaJsSquare className="text-yellow-500 mr-2 text-lg" />,
   Typescript: <SiTypescript className="text-blue-500 mr-2 text-lg" />,
   "React Js": <FaReact className="text-cyan-500 mr-2 text-lg" />,
+  Redux: <SiRedux className="text-cyan-500 mr-2 text-lg" />,
+  "Redux Saga": <SiReduxsaga className="text-cyan-500 mr-2 text-lg" />,
   "Next Js": <SiNextdotjs className="text-black mr-2 text-lg" />,
   "Tailwind CSS": <SiTailwindcss className="text-teal-400 mr-2 text-lg" />,
-  "Material UI": <FaTools className="text-gray-600 mr-2 text-lg" />,
+  "Material UI": <SiMaterialdesign className="text-gray-600 mr-2 text-lg" />,
   Bootstrap: <SiBootstrap className="text-purple-600 mr-2 text-lg" />,
   JQuery: <SiJquery className="text-blue-400 mr-2 text-lg" />,
   "SCSS/SASS": <SiSass className="text-pink-400 mr-2 text-lg" />,
   "Node.js": <FaNodeJs className="text-green-600 mr-2 text-lg" />,
   "Express.js": <FaNodeJs className="text-gray-700 mr-2 text-lg" />,
+  JWT: <SiJsonwebtokens className="text-gray-700 mr-2 text-lg" />,
   MongoDB: <SiMongodb className="text-green-500 mr-2 text-lg" />,
-  Neo4j: <FaDatabase className="text-blue-600 mr-2 text-lg" />,
-  SQL: <FaDatabase className="text-gray-700 mr-2 text-lg" />,
+  Neo4j: <SiNeo4J className=" mr-2 text-lg" />,
+  SQL: <SiMysql className="text-gray-700 mr-2 text-lg" />,
   RTL: <SiTestinglibrary className="text-red-500 mr-2 text-lg" />,
   Jest: <SiJest className="text-red-500 mr-2 text-lg" />,
   Enzyme: <FaTools className="text-gray-600 mr-2 text-lg" />,
@@ -64,7 +83,7 @@ const techIcons = {
   Bitbucket: <SiBitbucket className="text-blue-500 mr-2 text-lg" />,
   Postman: <SiPostman className="text-orange-500 mr-2 text-lg" />,
   "Git lab": <SiGitlab className="text-orange-600 mr-2 text-lg" />,
-  Socket: <FaTools className="text-gray-600 mr-2 text-lg" />,
+  Socket: <SiSocketdotio className="text-gray-600 mr-2 text-lg" />,
   GitHub: <FaGithub className="text-gray-800 mr-2 text-lg" />,
   Docker: <FaDocker className="text-blue-500 mr-2 text-lg" />,
   Webpack: <SiWebpack className="text-blue-400 mr-2 text-lg" />,
@@ -74,7 +93,7 @@ const techIcons = {
   Confluence: <SiConfluence className="text-blue-600 mr-2 text-lg" />,
 };
 
-const cards = [
+const cards: Card[] = [
   {
     title: "Frontend",
     technologies: [
@@ -83,6 +102,8 @@ const cards = [
       "Javascript",
       "Typescript",
       "React Js",
+      "Redux",
+      "Redux Saga",
       "Next Js",
       "Tailwind CSS",
       "Material UI",
@@ -93,14 +114,14 @@ const cards = [
   },
   {
     title: "Backend",
-    technologies: ["Node.js", "Express.js", "Socket"],
+    technologies: ["Node.js", "Express.js", "Socket", "JWT"],
   },
   {
     title: "Database",
     technologies: ["MongoDB", "Neo4j", "SQL"],
   },
   {
-    title: "Unit Testing",
+    title: "Testing",
     technologies: ["RTL", "Jest", "Enzyme"],
   },
   {
@@ -131,7 +152,7 @@ const cards = [
  * This component displays a section showcasing different skills along with their respective icons.
  * @returns {JSX.Element} The JSX element representing the Skills section.
  */
-const Skills = (): JSX.Element => {
+const Skills: React.FC = () => {
   return (
     <div id="skills" className="w-full pt-16 px-4">
       <h1 className="md:text-4xl sm:text-3xl text-2xl text-black font-extrabold py-4 text-center leading-10">
@@ -156,10 +177,15 @@ const Skills = (): JSX.Element => {
 const Card = ({ title, technologies }: any) => {
   return (
     <div className="rounded-lg shadow-lg overflow-hidden text-center p-4 md:p-6 transform transition duration-300 hover:scale-105 bg-gradient-to-r from-[#f7f7f7] to-[#cdc5c5cc] border []">
-      <h2 className="text-lg md:text-2xl font-bold text-gray-800 mb-2 md:mb-4">{title}</h2>
+      <h2 className="text-lg md:text-2xl font-bold text-gray-800 mb-2 md:mb-4">
+        {title}
+      </h2>
       <div className="flex flex-wrap justify-center">
         {technologies.map((tech: any) => (
-          <div key={tech} className="flex items-center space-x-1 md:space-x-2 mr-1 md:mr-2 mb-1 md:mb-2">
+          <div
+            key={tech}
+            className="flex items-center space-x-1 md:space-x-2 mr-1 md:mr-2 mb-1 md:mb-2"
+          >
             <span className="inline-flex items-center bg-[#e0e0e0] rounded-full p-1 md:p-2 text-xs md:text-sm font-semibold text-gray-800 hover:bg-gray-400 hover:text-white transition duration-200">
               {techIcons[tech]}
               {`${tech}`}
@@ -170,6 +196,5 @@ const Card = ({ title, technologies }: any) => {
     </div>
   );
 };
-
 
 export default Skills;

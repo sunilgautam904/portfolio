@@ -20,8 +20,8 @@ const Home = () => {
    * from the document body after the download is complete.
    */
   const downloadResume = () => {
-    const url = "/images/sunil_Gautam.pdf";
-    const link = document.createElement("a");
+    const url: string = "/images/sunil_Gautam.pdf";
+    const link: HTMLAnchorElement = document.createElement("a");
     link.href = url;
     link.setAttribute("download", "Sunil_Gautam.pdf");
     document.body.appendChild(link);

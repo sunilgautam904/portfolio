@@ -24,7 +24,7 @@ const Navbar = () => {
    * @param sectionId - The ID of the section to scroll to.
    */
   const handleScroll = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
+    const section: HTMLElement | null = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false);
@@ -36,6 +36,7 @@ const Navbar = () => {
    */
   useEffect(() => {
     const handleClickOutside = (event: any) => {
+      // @ts-ignore
       if (sidebarRef.current && !sidebarRef?.current?.contains(event.target)) {
         setIsMenuOpen(false);
       }
