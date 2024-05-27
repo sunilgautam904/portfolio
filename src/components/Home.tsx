@@ -63,7 +63,7 @@ const Home = () => {
             >
               Download Resume
             </button>
-            <div className="flex items-center p-5 rounded-full">
+            <div className="flex items-center justify-center p-5 rounded-full md:justify-start">
               <FaMouse className="text-black" />
               <span className="text-black ml-2 mr-4">Scroll Down</span>
               <FaArrowDown className="text-[#8B55B0] animate-bounce" />
