@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
+import { Snackbar, Alert } from "@mui/material";
 
 import {
   FaGithubSquare,
@@ -13,19 +14,35 @@ import {
  * This component renders the footer section of the website, providing various functionalities such as
  * an about section, quick navigation links, contact information, and a contact form.
  */
-const Footer = () => {
+const Footer: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
+  const [message, setMessage] = useState<string>("");
+  const [isError, setIsError] = useState<boolean>(false);
+  const [showSnackbar, setShowSnackbar] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (message) {
+      setShowSnackbar(true);
+      const timer = setTimeout(() => {
+        setShowSnackbar(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
+
   /**
    * This method handles the change event for form inputs.
    * Updates the formData state with the new input values.
    * @param event - The event object from the input change event.
    */
-  const handleChange = (event: any) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
@@ -39,7 +56,7 @@ const Footer = () => {
    * sends an email using EmailJS, and resets the form data.
    * @param event - The event object from the form submission event.
    */
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const templateParams = {
       from_name: formData.name,
@@ -58,11 +75,13 @@ const Footer = () => {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          alert("Message sent successfully!");
+          setMessage("Message sent successfully!");
+          setIsError(false);
         },
         (error) => {
           console.error("FAILED...", error);
-          alert("Failed to send message. Please try again later.");
+          setMessage("Failed to send message. Please try again later.");
+          setIsError(true);
         }
       );
 
@@ -71,6 +90,14 @@ const Footer = () => {
       email: "",
       message: "",
     });
+  };
+
+  /**
+   * This method handles the close event for the Snackbar.
+   * Sets the state to hide the Snackbar.
+   */
+  const handleCloseSnackbar = () => {
+    setShowSnackbar(false);
   };
 
   return (
@@ -194,6 +221,19 @@ const Footer = () => {
           </form>
         </div>
       </div>
+      <Snackbar
+        open={showSnackbar}
+        autoHideDuration={5000}
+        onClose={handleCloseSnackbar}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={isError ? "error" : "success"}
+          sx={{ width: "100%" }}
+        >
+          {message}
+        </Alert>
+      </Snackbar>
       <div className="text-center mt-8">
         <p>&copy; 2024 Sunil Gautam. All rights reserved.</p>
       </div>
